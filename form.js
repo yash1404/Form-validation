@@ -19,8 +19,35 @@ const password2value= password2.value.trim();
 if(usernamevalue===""){
   seterrorfor(username,"username cannot be  blank");
 }else{
-  setsuccessfor(username);
+  setsuccessfor(username,"username saved successfully");
 }
+
+if(emailvalue===""){
+  seterrorfor(email,"email cannot be  blank");
+}else{
+  setsuccessfor(email,"email saved successfully");
+}
+
+if(passwordvalue===""){
+  seterrorfor(password,"password cannot be  blank");
+}else{
+  setsuccessfor(password,"password saved successfully");
+}
+
+if(password2value===""){
+  seterrorfor(password2,"password cannot be  blank");
+}
+else{
+  setsuccessfor(password2,"password saved successfully");
+}
+}
+
+let setsuccessfor= function (input,message) {
+  const formcontrol= input.parentElement;
+const small=formcontrol.querySelector("small");
+
+small.innerText=message;
+formcontrol.className="form-control success"
 }
 
 function seterrorfor(input,message){
@@ -29,5 +56,5 @@ const small=formcontrol.querySelector("small");
 
 small.innerText=message;
 formcontrol.className="form-control error";
-
 }
+
